@@ -2,7 +2,7 @@
 class Player_model extends CI_Model
 {
     private $table='players as p';
-    public function getAll($where,$like,$sortBy,$sortOrder,$perPage,$offset)
+    public function getAll($where,$like=null,$sortBy='last_name',$sortOrder='asc',$perPage=null,$offset=null)
     {
 
         if(!empty($where)){
@@ -51,6 +51,7 @@ class Player_model extends CI_Model
 
             $this->db->where('id',$id);
             $this->db->update('players',$playerInfo);
+
         }else{
 
             $this->db->insert('players',$playerInfo);

@@ -36,8 +36,11 @@ class Game_model extends CI_Model
     }
     public function getOne($id)
     {
-        $this->db->where('id',$id);
-        $q=$this->db->get('games');
+        $this->db->select('g.score,g.id,g.date_play,g.home_team_id,g.away_team_id,t1.team_name as home_team,t2.team_name as away_team');
+        $this->db->join('teams as t1','t1.id=g.home_team_id');
+        $this->db->join('teams as t2',' t2.id=g.away_team_id');
+        $this->db->where('g.id',$id);
+        $q=$this->db->get('games as g');
         return $q->row();
     }
     public function countResult($where=array())

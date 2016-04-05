@@ -1,6 +1,6 @@
 <?php $this->load->view('admin/include/header');?>
 <?php $this->load->view('admin/include/menu');?>
-    <a href="<?=base_url()?>roster/create/<?=$game->id?>">Insert roster</a> | <a href="<?=base_url()?>roster/update/<?=$game->id?>">Update roster</a>
+    <a href="<?=base_url()?>roster/create/<?=$game->id?>">Insert roster</a> | <a href="<?=base_url()?>roster/update/<?=$game->id?>">Update roster</a>  | <a href="<?=base_url()?>roster/delete/<?=$game->id?>">Reset roster</a>
     <div class="row-fluid">
         <div class="span6" style="display: inline-table">
             <table class="table table-striped">

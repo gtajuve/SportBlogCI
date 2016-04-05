@@ -15,6 +15,7 @@ class Roster_model extends CI_Model
         }
         return $result;
     }
+
     public function save($playerInfo)
     {
         if(array_key_exists('id',$playerInfo)){
@@ -28,5 +29,10 @@ class Roster_model extends CI_Model
 
             $this->db->insert('games_players',$playerInfo);
         }
+    }
+    public function delete($id)
+    {
+        $this->db->where('game_id', $id);
+        $this->db->delete('games_players');
     }
 }

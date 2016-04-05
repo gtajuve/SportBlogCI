@@ -1,5 +1,12 @@
+
 <?php $this->load->view('admin/include/header');?>
 <?php $this->load->view('admin/include/menu');?>
+    <a href="" id="show">AddCountry</a>
+    <div id="add" >
+        <fieldset>
+        Име <input type="text"/><input type="submit" value="Add"/>
+        </fieldset>
+    </div>
     <table>
         <thead>
         <tr>
@@ -23,3 +30,11 @@
     </table>
 
 <?php $this->load->view('admin/include/footer');?>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>
+
+        $('#show').on('click',function(){
+            $('#add').toggle();
+
+    })
+</script>
